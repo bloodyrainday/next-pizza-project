@@ -1,10 +1,3 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-
 export default function Home() {
-  return (
-    <div>
-      home<Button variant={"outline"}>Kорзина</Button>
-    </div>
-  );
+  return <h1>Main</h1>;
 }
