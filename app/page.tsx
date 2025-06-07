@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
-      home<Button variant={"default"}>submit</Button>
+      home<Button variant={"outline"}>Kорзина</Button>
     </div>
   );
 }
