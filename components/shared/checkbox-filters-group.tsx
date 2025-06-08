@@ -9,7 +9,7 @@ type Item = FilterChecboxProps;
 interface Props {
   title: string;
   items: Item[];
-  defaultItems?: Item[];
+  defaultItems: Item[];
   limit?: number;
   searchInputPlaceholder?: string;
   className?: string;
@@ -28,6 +28,20 @@ export const CheckboxFiltersGroup = ({
   defaultValue,
 }: Props) => {
   const [showAll, setShowAll] = React.useState(false);
+  const [searchValue, setSearchValue] = React.useState("");
+
+  const [selected, setSelected] = React.useState({});
+
+  const onChangeSearchInput = (value: string) => {
+    setSearchValue(value);
+  };
+
+  const list = showAll
+    ? items.filter((item) =>
+        item.text.toLowerCase().includes(searchValue.toLowerCase())
+      )
+    : defaultItems.slice(0, limit);
+
   return (
     <div className={className}>
       <p className="font-bold mb-3">{title}</p>
@@ -37,12 +51,13 @@ export const CheckboxFiltersGroup = ({
           <Input
             placeholder={searchInputPlaceholder}
             className="bg-gray-50 border-none"
+            onChange={(e) => onChangeSearchInput(e.target.value)}
           />
         </div>
       )}
 
       <div className="flex flex-col gap-4 max-h-96 pr-2 overflow-auto scrollbar">
-        {(showAll ? items : defaultItems || items).map((item) => (
+        {list.map((item) => (
           <FilterCheckbox
             onCheckedChange={(data) => console.log(data)}
             checked={false}

@@ -37,7 +37,7 @@ export const Filters = ({ className }: Props) => {
 
       <CheckboxFiltersGroup
         className="mt-5"
-        title="Формат"
+        title="Ингредиенты"
         limit={6}
         defaultItems={[
           {
@@ -68,51 +68,51 @@ export const Filters = ({ className }: Props) => {
         items={[
           {
             text: "Сырный соус",
-            value: "1",
+            value: "7",
           },
           {
             text: "Моццарелла",
-            value: "2",
+            value: "8",
           },
           {
             text: "Чеснок",
-            value: "3",
+            value: "9",
           },
           {
             text: "Солённые огурчики",
-            value: "4",
+            value: "10",
           },
           {
             text: "Красный лук",
-            value: "5",
+            value: "11",
           },
           {
             text: "Томаты",
-            value: "6",
+            value: "12",
           },
           {
             text: "Сырный соус",
-            value: "1",
+            value: "13",
           },
           {
             text: "Моццарелла",
-            value: "2",
+            value: "14",
           },
           {
             text: "Чеснок",
-            value: "3",
+            value: "15",
           },
           {
             text: "Солённые огурчики",
-            value: "4",
+            value: "16",
           },
           {
             text: "Красный лук",
-            value: "5",
+            value: "17",
           },
           {
             text: "Томаты",
-            value: "6",
+            value: "18",
           },
         ]}
       />
