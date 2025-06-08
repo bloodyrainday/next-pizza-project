@@ -25,7 +25,7 @@ export const Categories: React.FC<Props> = ({ className }) => {
     >
       {cats.map((name, i) => (
         <Link
-          key={name}
+          key={i}
           className={cn(
             "flex items-center font-bold h-11 rounded-2xl px-5",
             activeIndex === i &&
