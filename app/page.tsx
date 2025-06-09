@@ -16,7 +16,7 @@ export default function Home() {
       <TopBar />
 
       <Container className="mt-10 pb-14">
-        <div className="flex gap-[60px]">
+        <div className="flex gap-[80px]">
           <div className="w-[250px]">
             <Filters />
           </div>
@@ -33,12 +33,55 @@ export default function Home() {
               /> */}
               <ProductsGroupList
                 title="Пиццы"
-                items={[1, 2, 3, 4, 5]}
+                items={[
+                  {
+                    id: 1,
+                    name: "Маргарита",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE7D610BBEB562BD4D48786AD87270.webp",
+                    price: 500,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 2,
+                    name: "Маргарита",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE7D610BBEB562BD4D48786AD87270.webp",
+                    price: 500,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 3,
+                    name: "Маргарита",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE7D610BBEB562BD4D48786AD87270.webp",
+                    price: 500,
+                    items: [{ price: 550 }],
+                  },
+                  {
+                    id: 4,
+                    name: "Маргарита",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE7D610BBEB562BD4D48786AD87270.webp",
+                    price: 500,
+                    items: [{ price: 550 }],
+                  },
+                ]}
                 categoryId={0}
               />
+
               <ProductsGroupList
-                title="Комбо"
-                items={[1, 2, 3, 4, 5]}
+                title="Завтрак"
+                items={[
+                  {
+                    id: 1,
+                    name: "Маргарита",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE7D610BBEB562BD4D48786AD87270.webp",
+                    price: 500,
+                    items: [{ price: 550 }],
+                  },
+                ]}
                 categoryId={1}
               />
             </div>
