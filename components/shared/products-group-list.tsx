@@ -20,7 +20,7 @@ export const ProductsGroupList: React.FC<Props> = ({
   categoryId,
   listClassName,
 }) => {
-  const intersectionRef = React.useRef<Ref<HTMLDivElement> | null>(null);
+  const intersectionRef = React.useRef<any>(null);
   const intersection = useIntersection(intersectionRef, {
     threshold: 0.4,
   });
