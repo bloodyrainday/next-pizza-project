@@ -13,7 +13,11 @@ model User {
     fullName String 
     email String @unique
     password String
-    role UserRole
+    role UserRole @default(USER)
+    verified DateTime
+
+    provider String?
+    providerId String?
 
     cart Cart?
     orders Order[]
@@ -142,7 +146,8 @@ model VerificationCode {
 
     code String
 
-    
+    @@unique([userId, code])
+
     createdAt DateTime @default(now())
 }
 
