@@ -22,7 +22,9 @@ async function up() {
   });
 }
 
-async function down() {}
+async function down() {
+  await prisma.$executeRaw`TRUNCATE TABLE "User" RESTART IDENTITY CASCADE`;
+}
 
 async function main() {
   try {
@@ -32,3 +34,12 @@ async function main() {
     console.log(e);
   }
 }
+
+main()
+  .then(async () => {
+    await prisma.$disconnect();
+  })
+  .catch(async () => {
+    await prisma.$disconnect();
+    process.exit(1);
+  });
