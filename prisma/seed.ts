@@ -7,11 +7,15 @@ const randomDecimalNumber = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min) * 10 + min * 10) / 10;
 };
 
-const generateProductItem = (
-  productId: number,
-  pizzaType: number,
-  size: number
-) => {
+const generateProductItem = ({
+  productId,
+  pizzaType,
+  size,
+}: {
+  productId: number;
+  pizzaType?: 1 | 2;
+  size?: 20 | 30 | 40;
+}) => {
   return {
     productId,
     size,
@@ -89,7 +93,75 @@ async function up() {
   });
 
   await prisma.productItem.createMany({
-    data: [{}],
+    data: [
+      // пицца пепперони фреш
+      generateProductItem({
+        productId: pizza1.id,
+        pizzaType: 1,
+        size: 20,
+      }),
+      generateProductItem({
+        productId: pizza1.id,
+        pizzaType: 2,
+        size: 30,
+      }),
+      generateProductItem({
+        productId: pizza1.id,
+        pizzaType: 2,
+        size: 40,
+      }),
+
+      //пицца сырная
+
+      generateProductItem({
+        productId: pizza2.id,
+        pizzaType: 1,
+        size: 20,
+      }),
+      generateProductItem({
+        productId: pizza2.id,
+        pizzaType: 1,
+        size: 30,
+      }),
+      generateProductItem({
+        productId: pizza2.id,
+        pizzaType: 1,
+        size: 40,
+      }),
+      generateProductItem({
+        productId: pizza2.id,
+        pizzaType: 2,
+        size: 20,
+      }),
+      generateProductItem({
+        productId: pizza2.id,
+        pizzaType: 2,
+        size: 30,
+      }),
+      generateProductItem({
+        productId: pizza2.id,
+        pizzaType: 2,
+        size: 40,
+      }),
+
+      // пицца чоризо фреш
+
+      generateProductItem({
+        productId: pizza3.id,
+        pizzaType: 1,
+        size: 20,
+      }),
+      generateProductItem({
+        productId: pizza3.id,
+        pizzaType: 2,
+        size: 30,
+      }),
+      generateProductItem({
+        productId: pizza3.id,
+        pizzaType: 2,
+        size: 40,
+      }),
+    ],
   });
 }
 
