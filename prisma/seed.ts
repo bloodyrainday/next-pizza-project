@@ -1,3 +1,4 @@
+import { categories } from "./constants";
 import { prisma } from "./prisma-client";
 import { hashSync } from "bcrypt";
 
@@ -5,7 +6,7 @@ async function up() {
   await prisma.user.createMany({
     data: [
       {
-        fullName: "User",
+        fullName: "User Test",
         email: "user@test.com",
         password: hashSync("1111", 10),
         verified: new Date(),
@@ -20,6 +21,10 @@ async function up() {
       },
     ],
   });
+
+  await prisma.category.createMany({
+    data: categories,
+  });
 }
 
 async function down() {
@@ -31,7 +36,7 @@ async function main() {
     await down();
     await up();
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
 }
 
